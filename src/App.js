@@ -1,25 +1,32 @@
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+	constructor() {
+		super();
+		this.state = {
+			zombies: [
+				{
+					name: 'Randy',
+					id: 'ran'
+				},
+				{
+					name: 'Simeon',
+					id: 'sim'
+				},
+				{
+					name: 'Rasputin',
+					id: 'ras'
+				}
+			]
+		};
+	}
+	render() {
+		return (
+			<div className="App">{this.state.zombies.map((zombie) => <h1 key={zombie.id}> {zombie.name} </h1>)}</div>
+		);
+	}
 }
 
 export default App;
