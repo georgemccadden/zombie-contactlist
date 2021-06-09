@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CardList } from './components/card-list/card-list.component';
 import './App.css';
 
 class App extends Component {
@@ -18,7 +19,12 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">{this.state.zombies.map((zombie) => <h1 key={zombie.id}> {zombie.name} </h1>)}</div>
+			<div className="App">
+				<CardList name="George">
+				{this.state.zombies.map((zombie) =>
+				<h1 key={zombie.id}> {zombie.name} </h1>)}
+				</CardList>
+			</div>
 		);
 	}
 }
